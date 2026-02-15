@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Search - Giant Library</title>
+    <link rel="icon" type="image/x-icon" href="randombook.png">
+
+</head>
+<body>
+	<header>
+	<h1>Advanced Search</h1>
+	</header>
+
+    <main>
+  
+     <form action="advancedsearch.html" method="get">		<!-- number 7, having HTML forms -->
+        <label for="title_query">Title:</label> 
+        <input type="text" id="title_query" name="title_query"> <br>
+
+	<label for="author_query">Author:</label> 
+        <input type="text" id="author_query" name="author_query"> <br>
+
+	<label for="pub_before_query">Published before:</label> 
+        <input type="date" id="pub_before_query" name="pub_before_query"> <br>
+
+	<label for="pub_after_query">Published after:</label> 
+        <input type="date" id="pub_after_query" name="pub_after_query"> <br>
+
+	<label for="language_query">Language:</label>
+	<select id="language_query" name="language_query">
+	   <option value="any_language">Any</option>
+  	   <option value="english">English</option>
+  	   <option value="xhosa">isiXhosa</option>
+  	   <option value="afrikaans">Afrikaans</option>
+	</select> <br>
+
+	<label for="fictional_query">Fiction or Non-fiction:</label> <br>
+	  <input type="radio" id="fiction" name="fiction">
+  	  <label for="fiction">Fiction</label>
+  	  <input type="radio" id="non-fiction" name="non-fiction">
+  	  <label for="non-fiction">Non-fiction</label>
+  	  <br>
+
+	<label for="genre_query">Genre:</label>
+	<select id="genre_query" name="genre_query">
+	   <option value="any_genre">Any</option>
+  	   <option value="mystery">Mystery</option>
+  	   <option value="fantasy">Fantasy</option>
+  	   <option value="romance">Romance</option>
+	</select> <br>
+
+	<label for="trope_query">Tropes:</label> <br>
+	  <input type="checkbox" id="chosen_one" name="chosen_one">
+  	  <label for="chosen_one">Chosen one</label><br>
+  	  <input type="checkbox" id="enemies_to_lovers" name="enemies_to_lovers">
+  	  <label for="enemies_to_lovers">Enemies to lovers</label>
+  	  <br>
+
+	<button type="submit">&#128269;</button>
+    </form>
+
+
+    </main>
+   
+</body>
+</html>

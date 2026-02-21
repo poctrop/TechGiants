@@ -1,0 +1,84 @@
+.menu{
+    box-sizing: border-box;
+    border-style:inset;
+    text-align: center;
+}
+.logo{
+    display: block;
+    margin:auto;
+    border: outset;
+    float: bottom;   
+}
+
+
+
+ul{
+
+    box-sizing: border-box;
+    text-align:center;
+    border:2px solid black;
+    overflow:hidden;
+    background-color: black;
+
+    
+    left:20px;
+    left:30%;
+
+}
+
+ul li{
+    display: inline-block;
+}
+ul li a{
+    display:inline-block;
+    color: white;
+    text-align:center;
+    padding:15px 20px;
+    text-decoration: none;
+    top: 0;
+}
+a:hover{
+    background-color: white;
+    color:black;
+
+}
+h1,h2{
+    text-align:center;
+}
+
+body{
+    margin-top:0;
+    margin-bottom:20px;
+    margin-left:20px;
+    margin-right:20px;
+}
+
+h2{
+    box-sizing: border-box;
+    width:fit-content;
+
+    position:relative;
+    left:37%;
+    border-style:outset;
+    text-align: center;
+   border-radius: 10px;
+    
+}
+.paragraph{
+column-count: 1;
+column-width: 50px;
+
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}

@@ -14,48 +14,254 @@
 
     <main>
   
-     <form action="advancedsearch.html" method="get">		<!-- number 7, having HTML forms -->
-        <label for="title_query">Title:</label> 
-        <input type="text" id="title_query" name="title_query"> <br>
+     <form id="advancedsearch_form" action="searchresults.html" method="get">		<!-- number 7, having HTML forms -->
 
-	<label for="author_query">Author:</label> 
-        <input type="text" id="author_query" name="author_query"> <br>
+	<fieldset id="basicsearch_fieldset">
+    	     <legend>Search for:</legend>
 
-	<label for="pub_before_query">Published before:</label> 
-        <input type="date" id="pub_before_query" name="pub_before_query"> <br>
+        	<label for="title_query">Title:</label> 
+  		<input type="text" id="title_query" name="title_query"> <br>
 
-	<label for="pub_after_query">Published after:</label> 
-        <input type="date" id="pub_after_query" name="pub_after_query"> <br>
+		<label for="author_query">Author:</label> 
+        	<input type="text" id="author_query" name="author_query"> <br>
 
-	<label for="language_query">Language:</label>
-	<select id="language_query" name="language_query">
-	   <option value="any_language">Any</option>
-  	   <option value="english">English</option>
-  	   <option value="xhosa">isiXhosa</option>
-  	   <option value="afrikaans">Afrikaans</option>
-	</select> <br>
+		<label for="isbn_query">ISBN code:</label> 
+        	<input type="text" id="isbn_query" name="isbn_query"> <br>
+		<p id="isbn_error"></p>						<!-- this will be used to display an error message if isbn format is incorrect -->
 
-	<label for="fictional_query">Fiction or Non-fiction:</label> <br>
-	  <input type="radio" id="fiction" name="fiction">
-  	  <label for="fiction">Fiction</label>
-  	  <input type="radio" id="non-fiction" name="non-fiction">
-  	  <label for="non-fiction">Non-fiction</label>
-  	  <br>
+		<label for="pub_after_query">Published after:</label> 
+        	<input type="number" placeholder="YYYY" min="1000" max="2025" id="pub_after_query" name="pub_after_query"> 
+		<br>
 
-	<label for="genre_query">Genre:</label>
-	<select id="genre_query" name="genre_query">
-	   <option value="any_genre">Any</option>
-  	   <option value="mystery">Mystery</option>
-  	   <option value="fantasy">Fantasy</option>
-  	   <option value="romance">Romance</option>
-	</select> <br>
+		<label for="pub_before_query">Published before:</label> 
+        	<input type="number" placeholder="YYYY" min="1000" max="2026" id="pub_before_query" name="pub_before_query"> 
+		<p id="pub_before_error"></p>		<!-- will be used to display an error if pub_before date is <= pub_after date -->
+		<br>
+		
 
-	<label for="trope_query">Tropes:</label> <br>
-	  <input type="checkbox" id="chosen_one" name="chosen_one">
-  	  <label for="chosen_one">Chosen one</label><br>
-  	  <input type="checkbox" id="enemies_to_lovers" name="enemies_to_lovers">
-  	  <label for="enemies_to_lovers">Enemies to lovers</label>
-  	  <br>
+		<label for="language_query">Language:</label>
+		<select id="language_query" name="language_query">
+	 	   <option value="any_language">Any</option>
+  	 	   <option value="english">English</option>
+  	 	   <option value="xhosa">isiXhosa</option>
+  		   <option value="afrikaans">Afrikaans</option>
+		</select> <br>
+
+		<label for="page_query">Number of pages:</label>
+		<select id="language_query" name="language_query">
+		   <option value="any_pages">Any</option>
+  		   <option value="100minus">-100</option>
+  		   <option value="100plus">100+</option>
+  		   <option value="200plus">200+</option>
+		</select> <br>
+
+		<label for="fictional_query">Fiction or Non-fiction:</label> <br>
+	  	   <input type="radio" id="fiction" name="fiction">
+  	  	   <label for="fiction">Fiction</label>
+  	  	   <input type="radio" id="non-fiction" name="non-fiction">
+  	  	   <label for="non-fiction">Non-fiction</label>
+  	  	<br>
+
+	</fieldset>
+
+	<fieldset>
+    	     <legend>Include:</legend>
+
+		<label for="genre_query">Genre:</label> <br>
+	  	   <input type="checkbox" id="mystery" name="mystery">
+  	 	   <label for="mystery">Mystery</label><br>
+		   <input type="checkbox" id="romance" name="romance">
+  		   <label for="romance">Romance</label><br>
+	 	   <input type="checkbox" id="action" name="action">
+  		   <label for="action">Action</label><br>
+		   <input type="checkbox" id="horror" name="horror">
+  		   <label for="horror">Horror</label><br>
+		   <input type="checkbox" id="classics" name="classics">
+  		   <label for="classics">Classics</label><br>
+		   <input type="checkbox" id="textbook" name="textbook">
+  		   <label for="textbook">Textbook</label><br>
+		   <input type="checkbox" id="scifi" name="scifi">
+  		   <label for="scifi">Science Fiction</label><br>
+		   <input type="checkbox" id="hisfic" name="hisfic">
+  		   <label for="hisfic">Historical Fiction</label><br>
+		   <input type="checkbox" id="realfic" name="realfic">
+  		   <label for="realfic">Realistic Fiction</label><br>
+		   <input type="checkbox" id="ya" name="ya">
+  		   <label for="ya">Young Adult</label><br>
+  		   <input type="checkbox" id="fantasy" name="fantasy">
+  		   <label for="fantasy">Fantasy</label>
+  	  	<br>
+
+		<label for="trope_query">Tropes:</label> <br>
+		   <input type="checkbox" id="chosen_one" name="chosen_one">
+  		   <label for="chosen_one">Chosen one</label>
+  		   <input type="checkbox" id="enemies_to_lovers" name="enemies_to_lovers">
+  		   <label for="enemies_to_lovers">Enemies to lovers</label>
+  		   <input type="checkbox" id="found_family" name="found_family">
+  		   <label for="found_family">Found family</label>
+  		   <input type="checkbox" id="friends_to_lovers" name="friends_to_lovers">
+  		   <label for="friends_to_lovers">Friends to lovers</label>
+  		   <input type="checkbox" id="coming_of_age" name="coming_of_age">
+  		   <label for="coming_of_age">Coming of age</label>
+  		   <input type="checkbox" id="love_triangle" name="love_triangle">
+  		   <label for="love_triangle">Love triangle</label>
+  		   <input type="checkbox" id="whodunnit" name="whodunnit">
+  		   <label for="whodunnit">Whodunnit</label>
+  		   <input type="checkbox" id="miscommunication" name="miscommunication">
+  		   <label for="miscommunication">Miscommunication</label>
+  		   <input type="checkbox" id="strong_female_friendships" name="strong_female_friendships">
+  		   <label for="strong_female_friendships">Strong female friendship</label>
+  		   <input type="checkbox" id="bromance" name="bromance">
+  		   <label for="bromance">Bromance</label>
+  		   <input type="checkbox" id="animals_as_characters" name="animals_as_characters">
+  		   <label for="animals_as_characters">Animals as characters</label>
+  		   <input type="checkbox" id="fresh_start" name="fresh_start">
+  		   <label for="fresh_start">Fresh start</label>
+  	  	<br>
+
+		<label for="feature_query">Additional features:</label> <br>
+	  	   <input type="checkbox" id="standalone" name="standalone">
+  	 	   <label for="standalone">Standalone</label><br>
+		   <input type="checkbox" id="series" name="series">
+  		   <label for="series">Part of a series</label><br>
+	 	   <input type="checkbox" id="firstperson" name="firstperson">
+  		   <label for="firstperson">1st person narrator</label><br>
+		   <input type="checkbox" id="multipov" name="multipov">
+  		   <label for="multipov">Multi POV</label><br>
+		   <input type="checkbox" id="lgbtq" name="lgbtq">
+  		   <label for="lgbtq">LGBTQ+</label><br>
+		   <input type="checkbox" id="poc_author" name="poc_author">
+  		   <label for="poc_author">PoC author</label><br>
+		   <input type="checkbox" id="disability_rep" name="disability_rep">
+  		   <label for="disability_rep">Disability representation</label><br>
+		   <input type="checkbox" id="dystopia" name="dystopia">
+  		   <label for="dystopia">Dystopia</label><br>
+		   <input type="checkbox" id="magical_realism" name="magical_realism">
+  		   <label for="magical_realism">Magical realism</label><br>
+		   <input type="checkbox" id="unreliable_narrator" name="unreliable_narrator">
+  		   <label for="unreliable_narrator">Unreliable narrator</label><br>
+  		   <input type="checkbox" id="cliffhanger" name="cliffhanger">
+  		   <label for="cliffhanger">Cliffhanger ending</label>
+  	  	<br>
+
+	</fieldset>
+
+	<fieldset>
+    	     <legend>Exclude:</legend>
+
+		<label for="genre_query">Genre:</label> <br>
+	  	   <input type="checkbox" id="mystery" name="mystery">
+  	 	   <label for="mystery">Mystery</label><br>
+		   <input type="checkbox" id="romance" name="romance">
+  		   <label for="romance">Romance</label><br>
+	 	   <input type="checkbox" id="action" name="action">
+  		   <label for="action">Action</label><br>
+		   <input type="checkbox" id="horror" name="horror">
+  		   <label for="horror">Horror</label><br>
+		   <input type="checkbox" id="classics" name="classics">
+  		   <label for="classics">Classics</label><br>
+		   <input type="checkbox" id="textbook" name="textbook">
+  		   <label for="textbook">Textbook</label><br>
+		   <input type="checkbox" id="scifi" name="scifi">
+  		   <label for="scifi">Science Fiction</label><br>
+		   <input type="checkbox" id="hisfic" name="hisfic">
+  		   <label for="hisfic">Historical Fiction</label><br>
+		   <input type="checkbox" id="realfic" name="realfic">
+  		   <label for="realfic">Realistic Fiction</label><br>
+		   <input type="checkbox" id="ya" name="ya">
+  		   <label for="ya">Young Adult</label><br>
+  		   <input type="checkbox" id="fantasy" name="fantasy">
+  		   <label for="fantasy">Fantasy</label>
+  	  	<br>
+
+		<label for="trope_query">Tropes:</label> <br>
+		   <input type="checkbox" id="chosen_one" name="chosen_one">
+  		   <label for="chosen_one">Chosen one</label>
+  		   <input type="checkbox" id="enemies_to_lovers" name="enemies_to_lovers">
+  		   <label for="enemies_to_lovers">Enemies to lovers</label>
+  		   <input type="checkbox" id="found_family" name="found_family">
+  		   <label for="found_family">Found family</label>
+  		   <input type="checkbox" id="friends_to_lovers" name="friends_to_lovers">
+  		   <label for="friends_to_lovers">Friends to lovers</label>
+  		   <input type="checkbox" id="coming_of_age" name="coming_of_age">
+  		   <label for="coming_of_age">Coming of age</label>
+  		   <input type="checkbox" id="love_triangle" name="love_triangle">
+  		   <label for="love_triangle">Love triangle</label>
+  		   <input type="checkbox" id="whodunnit" name="whodunnit">
+  		   <label for="whodunnit">Whodunnit</label>
+  		   <input type="checkbox" id="miscommunication" name="miscommunication">
+  		   <label for="miscommunication">Miscommunication</label>
+  		   <input type="checkbox" id="strong_female_friendships" name="strong_female_friendships">
+  		   <label for="strong_female_friendships">Strong female friendship</label>
+  		   <input type="checkbox" id="bromance" name="bromance">
+  		   <label for="bromance">Bromance</label>
+  		   <input type="checkbox" id="animals_as_characters" name="animals_as_characters">
+  		   <label for="animals_as_characters">Animals as characters</label>
+  		   <input type="checkbox" id="fresh_start" name="fresh_start">
+  		   <label for="fresh_start">Fresh start</label>
+  	  	<br>
+
+		<label for="feature_query">Additional features:</label> <br>
+	  	   <input type="checkbox" id="standalone" name="standalone">
+  	 	   <label for="standalone">Standalone</label><br>
+		   <input type="checkbox" id="series" name="series">
+  		   <label for="series">Part of a series</label><br>
+	 	   <input type="checkbox" id="firstperson" name="firstperson">
+  		   <label for="firstperson">1st person narrator</label><br>
+		   <input type="checkbox" id="multipov" name="multipov">
+  		   <label for="multipov">Multi POV</label><br>
+		   <input type="checkbox" id="lgbtq" name="lgbtq">
+  		   <label for="lgbtq">LGBTQ+</label><br>
+		   <input type="checkbox" id="poc_author" name="poc_author">
+  		   <label for="poc_author">PoC author</label><br>
+		   <input type="checkbox" id="disability_rep" name="disability_rep">
+  		   <label for="disability_rep">Disability representation</label><br>
+		   <input type="checkbox" id="dystopia" name="dystopia">
+  		   <label for="dystopia">Dystopia</label><br>
+		   <input type="checkbox" id="magical_realism" name="magical_realism">
+  		   <label for="magical_realism">Magical realism</label><br>
+		   <input type="checkbox" id="unreliable_narrator" name="unreliable_narrator">
+  		   <label for="unreliable_narrator">Unreliable narrator</label><br>
+  		   <input type="checkbox" id="cliffhanger" name="cliffhanger">
+  		   <label for="cliffhanger">Cliffhanger ending</label>
+  	  	<br>
+
+		<label for="cw_query">Content warnings:</label> <br>
+
+		   <input type="checkbox" id="major_character_death" name="major_character_death">
+  		   <label for="major_character_death">Major character death</label>
+  		   <input type="checkbox" id="grief" name="grief">
+  		   <label for="grief">Grief</label>
+  		   <input type="checkbox" id="dv" name="dv">
+  		   <label for="dv">DV</label>
+  		   <input type="checkbox" id="sa" name="sa">
+  		   <label for="sa">SA</label>
+  		   <input type="checkbox" id="csa" name="csa">
+  		   <label for="csa">CSA</label>
+  		   <input type="checkbox" id="onpage_violence" name="onpage_violence">
+  		   <label for="onpage_violence">On-page violence</label>
+  		   <input type="checkbox" id="onpage_sex" name="onpage_sex">
+  		   <label for="onpage_sex">On-page sex (explicit)</label>
+  		   <input type="checkbox" id="onpage_homophobia" name="onpage_homophobia">
+  		   <label for="onpage_homophobia">On-page homophobia</label>
+  		   <input type="checkbox" id="onpage_transphobia" name="onpage_transphobia">
+  		   <label for="onpage_transphobia">On-page transphobia</label>
+  		   <input type="checkbox" id="onpage_racism" name="onpage_racism">
+  		   <label for="onpage_racism">On-page racism</label>
+  		   <input type="checkbox" id="sh" name="sh">
+  		   <label for="sh">SH</label>
+  		   <input type="checkbox" id="si" name="si">
+  		   <label for="si">SI</label>
+  		   <input type="checkbox" id="onpage_ableism" name="onpage_ableism">
+  		   <label for="onpage_ableism">On-page ableism</label>
+  		   <input type="checkbox" id="underage_sex" name="underage_sex">
+  		   <label for="underage_sex">Underage sex</label>
+  		   <input type="checkbox" id="parental_abuse" name="parental_abuse">
+  		   <label for="parental_abuse">Parental abuse</label>
+  	  	<br>
+
+	</fieldset>
+
 
 	<button type="submit">&#128269;</button>
     </form>

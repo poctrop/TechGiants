@@ -4,22 +4,114 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Feedback - Giant Library</title>
-    <link rel="icon" type="image/x-icon" href="randombook.png">
+    <link rel="stylesheet" type="text/css" href="styles.css">
 
 </head>
 <body>
 	<header>
-	<h1>Feedback</h1>
+
+		        
+  
+		<h1 class="menu">Feedback</h1>
+            <ul>	<!-- number 7, having HTML lists (unordered list) -->
+                <li><a href="home.html">Home</a></li>	<!-- number 4, integrating relative URLS-->
+                <li><a href="browse.html">Browse</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="feedback.html">Give Us Feedback</a></li>
+                <li><a href="formarks.html">Required Features for Practical</a></li>
+            </ul>
+
+        
+
+
+	
 	</header>
+
+    <section class="experience">
+        <h4>Please rate your overall experience with our website</h2>
+        <div class="boxfeedback">
+
+        </div>
+        <div class="boxfeedback">
+            
+        </div>
+        <div class="boxfeedback">
+            
+        </div>
+        <div class="boxfeedback">
+            
+        </div>
+        <div class="boxfeedbacklast">
+            
+        </div>
+        
+
+    </section>
+
+    <div class="containercomments">
+        <form class="comments">
+            <h3>Addition comments</h3>
+            <input type="text", id="ftype">
+        </form>
+    </div>
+
+    <section class="experience">
+        <section class="wordbackground">
+                    <h4>How likely are you to recommend Giants Books</h2>
+        </section>
+
+        <div class="boxfeedback">
+
+        </div>
+        <div class="boxfeedback">
+            
+        </div>
+        <div class="boxfeedback">
+            
+        </div>
+        <div class="boxfeedback">
+            
+        </div>
+        <div class="boxfeedbacklast">
+            
+        </div>
+    </section>
+
+    <section class="experience">
+        <h4>Please list your favourite parts about our Book website</h2>
+        <div class="boxfeedback">
+
+        </div>
+        <div class="boxfeedback">
+            
+        </div>
+        <div class="boxfeedback">
+            
+        </div>
+        <div class="boxfeedback">
+            
+        </div>
+        <div class="boxfeedbacklast">
+            
+        </div>
+    </section>
+    
 
     <main>
 
-	<form action="index.html" method="get">		<!-- number 7, having HTML forms -->
-           <label for="user_feedback">Let us know what you think of the site:</label>   <br>
-	   <textarea id="user_feedback" name ="user_feedback" rows = "10" cols="10" required></textarea>
-	   <br>
-	   <button type="submit">Submit feedback</button>
-    	</form>
+	    <form action="browse.html" method="get">		<!-- number 7, having HTML forms -->
+         <label for="fname">First name:</label>   
+        <input type="text" id="fname" name="fname" required> <br>
+
+        <label for = "email">Email:</label>
+        <input type = "email" id = "email" name = "Email" required> <br>
+
+	<button type="submit">Send</button>
+
+    </form>
+	
 
     </main>
    

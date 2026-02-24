@@ -2,6 +2,8 @@
     box-sizing: border-box;
     border-style:inset;
     text-align: center;
+    background-color: rgb(112, 112, 112);
+    border-radius: 10px;
 }
 .logo{
     display: block;
@@ -10,6 +12,10 @@
     float: bottom;   
 }
 
+img{
+
+    border-style:inset;
+}
 
 
 ul{
@@ -76,9 +82,69 @@ column-width: 50px;
   padding: 5px;
 }
 
-/* Clear floats after image containers */
 .row::after {
   content: "";
   clear: both;
   display: table;
 }
+body{
+    background-image:linear-gradient(to right,lightgray,black);
+
+}
+
+/*feedback page*/
+.experience{
+    border-style: inset;
+    background-color: grey;
+    padding-bottom:70px;
+    padding-right:10px;
+    margin-bottom:70px;
+    border-radius:15px;
+    width:fit-content;
+    
+
+    
+}
+.boxfeedback{
+    width: 30px; 
+    height: 30px; 
+    border: outset black; 
+    float:left;
+    margin-left:40px;
+    background-color: lightgray;
+    border-radius: 15px;
+    
+
+}
+.boxfeedbacklast{
+    width: 30px; 
+    height: 30px; 
+    border: outset black; 
+    float:left;
+    margin-right:50px;
+    margin-left:40px;
+    background-color: lightgrey;
+    border-radius: 15px;
+}
+
+
+.containercomments {
+    width: 100%;
+}
+
+.comments {
+    width: 40%;
+    border: inset white;
+    padding: 20px;
+    float: right;
+    background-image:linear-gradient(to right,rgb(105, 105, 105),lightgrey);
+    padding-bottom: 200px;
+    border-radius:15px;
+}
+#ftype{
+    width:100%;
+    padding-bottom:250px;
+    background-color: gray;
+    border-radius: 15px;;
+}
+

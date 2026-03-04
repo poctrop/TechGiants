@@ -1,29 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Giant Library</title>
-    <link rel="icon" type="image/x-icon" href="randombook.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Giant Library</title>
+  <link rel="icon" type="image/x-icon" href="randombook.png">
+  <link rel="stylesheet" href="CSS/basicstyling.css">
+  <link rel = "stylesheet" href = "CSS/feedback.css">
+
+
+
+
 
 </head>
+
 <body>
-	<header>
-	<h1>Login</h1>
-	</header>
 
-    <main>
-    <form action="browse.html" method="get">		<!-- number 7, having HTML forms -->
-         <label for="fname">First name:</label>   
-        <input type="text" id="fname" name="fname" required> <br>
+  <nav id="mainmenu">
 
-        <label for = "password">Password:</label>
-        <input type = "password" id = "password" name = "password" required> <br>
+    <ul> 
+      <li><img src="Images/logo.png" width=65 height=85 id="logo"></li>
+      <li><input type="search" placeholder="Search......"></li>
+      <li><a href="home.html">Home</a></li> 
+      <li><a href="browse.html">Browse</a></li>
+      <li><a class="currentpage" href="login.html">Login</a></li>
+      <li><a href="signup.html">Sign Up</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="feedback.html">Give Us Feedback</a></li>
+      <li><a href="formarks.html">Required Features for Practical</a></li>
+    </ul>
 
-	<button type="submit">Login</button>
+  </nav>
+  <header>
+    <h1>Login</h1>
+  </header>
+
+  <main id = "details">
+    <form action="browse.html" method="get"> <!-- number 7, having HTML forms -->
+      <label for="fname">Username:</label><br>
+      <input type="text" id="fname" name="fname" required> <br>
+
+      <label for="emailaddress">Email address:</label><br>
+      <input type="text" id="email" name="email" required> <br>
+
+      <label for="password">Password:</label><br>
+      <input type="password" id="password" name="password" required> <br>
+
+      
+      <button class="navbutton" id= "submit" type="submit">Login</button>
+
+      <p id="message"></p>
 
     </form>
-    </main>
-   
+
+
+  </main>
+
+  <footer>
+    <p><em>Giant Libary &#169 2026 Tech Giants, Inc. All rights reserved.</em></p>
+    <a class="navbutton" href="about.html">Contact Us</a>
+  </footer>
+    <script src="login.js"></script>
+
 </body>
+
 </html>
